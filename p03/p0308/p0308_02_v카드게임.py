@@ -29,11 +29,11 @@ while True:
     c_num = int(input("번호를 선택해주세요 >>"))
     print("현재 남은 카드: ",len(card_list)-arr_num)   #   총 카드수 52장len(card_list) - arry_num
     if c_num == 1:
-        print(card_list[arr_num])
+        print(card_list[arr_num])   #   리스트의 0번째
         arr_num += 1
     elif c_num == 2:
         for i in range(5):
-            print(card_list[arr_num])
+            print(card_list[arr_num])   #   리스트 0,1,2,3,4 보여주기
             arr_num += 1
     elif c_num == 0:
         break

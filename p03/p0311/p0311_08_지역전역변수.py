@@ -17,6 +17,6 @@ var1 = int(input("첫번째 수를 입력하세요 >>"))
 var2 = int(input("두번째 수를 입력하세요 >>"))
 
 #   함수호출에서 리턴을 받는곳.
-data = calc(var1,var2,a_input)
-print("결과값: ",data)
+dddaaa = calc(var1,var2,a_input)      ## 이름이 달라도 자리만 맞으면 ok / 함수 매개변수 내용이 다름, data로 받는 의미는??
+print("결과값: ",dddaaa)
 # print("결과값: ",result)    #   전역변수, 함수 바깥에서의 변수 NameError: name 'result' is not defined 밖에서는 사용할 수 없다.
