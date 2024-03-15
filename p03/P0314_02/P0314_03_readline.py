@@ -1,15 +1,16 @@
 #   stu.txt파일을 출력하시오
 file = open("stu.txt","r",encoding="utf8")
-txt = file.readline()
-#   if txt == "": break
-t_list = txt.split(",")
-t_list[0] = int(t_list[0].strip())
-t_list[1] = t_list[1].strip()
-t_list[2] = int(t_list[2].strip())
-t_list[3] = int(t_list[3].strip())
-t_list[4] = int(t_list[4].strip())
-t_list[5] = int(t_list[5].strip())
-t_list[6] = float(t_list[6].strip())
+while True:
+    txt = file.readline()
+    #   if txt == "": break
+    t_list = txt.split(",")
+    t_list[0] = int(t_list[0].strip())
+    t_list[1] = t_list[1].strip()
+    t_list[2] = int(t_list[2].strip())
+    t_list[3] = int(t_list[3].strip())
+    t_list[4] = int(t_list[4].strip())
+    t_list[5] = int(t_list[5].strip())
+    t_list[6] = float(t_list[6].strip())
 
 print(t_list)
 

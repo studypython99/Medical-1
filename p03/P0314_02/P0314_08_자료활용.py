@@ -12,7 +12,7 @@ while True:
         continue
     if contens == "": break
     f_list = contens.split(",")
-    f_list[1] = int(f_list[1])
+    f_list[1] = int(f_list[1])  #   [1] 각 줄의 1번째 방
     sum += f_list[1]
 print(sum)
     # for i in f_list:
