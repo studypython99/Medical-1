@@ -26,7 +26,7 @@ def stu_main_print():
 def stu_insert(cnt):
     while True :
         name = input(f"{len(students)+1}번째 학생의 이름을 입력하세요.(0.취소)")
-        if(name=="0"):
+        if name=="0":
             print("학생 입력을 취소합니다.")
             break
         student= {} #데이터 초기화

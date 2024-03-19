@@ -3,7 +3,7 @@ class Car:
 #   carCount 클래스 변수
     carCount = 1    #   1부터 입력한다 
 #   carNo에는 carCount 숫자를 이용해서 carNo를 넣으시오.
-    carNo = 0   #   처음엔 carCount(1)+carNo(0), 두번째엔 
+    carNo = 0   #   처음엔 carCount(1)+carNo(0), 두번째엔 ...?
 #   carNo 클래스 변수를 이용해서 숫자를 증가
 #   color="white", door=5, tire=4, speed
     def __init__(self,color="white",door=5,tire=4,speed=0):
