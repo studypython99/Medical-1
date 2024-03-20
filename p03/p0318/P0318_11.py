@@ -4,7 +4,7 @@ class Student:
 
     # 생성자: __init__ initialize: 초기화
     # 클래스에 대한 객체선언을 하면 제일먼저 호출되는 함수
-    def __init__(self,name="",kor=0,eng=0,math=0):   
+    def __init__(self,name="",kor=0,eng=0,math=0):   #  기본값을 설정해준다. ex) 차를 만들 때 기본적인 구조 제공, 
         
         self.name = name
         if kor>100: #   점수가 100점이 넘어간다? 그럴수없지이

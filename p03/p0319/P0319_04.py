@@ -9,9 +9,9 @@ class Student:
         else:
             self.stuNo = stuNo
         self.name = name
+        self.math = math
         self.kor = kor
         self.eng = eng
-        self.math = math
         self.total = kor + eng + math
         self.avg = float("{:.2f}".format(self.total/3))
         self.rank = rank
