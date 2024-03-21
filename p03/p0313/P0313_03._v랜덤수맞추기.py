@@ -6,9 +6,9 @@
 #   입력한 숫자: n,n,n,n,n,n
 import random
 ran_num = random.randint(1,100)
-ran_list = []
+ran_list = []   #   맞출려고 입력했던 숫자들 모음
 in_num = 0
-cnt = 1
+cnt = 1 #   몇회차인지 
 while True:
     in_num = int(input("{}회차, 숫자를 입력하세요 >>".format(cnt))) 
     ran_list.append(in_num)   
