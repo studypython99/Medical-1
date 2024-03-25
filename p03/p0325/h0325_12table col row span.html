@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>colspan, rowspan</title>
+        <style>
+            table{border-collapse: collapse;
+                text-align: center; font-weight: 700;}
+            table,tr,td{border: 1px solid black;}
+        </style>
+    </head>
+    <body>
+        <table>
+
+            <colgroup>
+                <col width="100px">
+                <col width="300px">
+                <col width="100px">
+                <col width="300px">
+            </colgroup>
+            
+            <tr>
+                <td>이름</td>
+                <td></td>
+                <td>연락처</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td colspan="3"></td>
+                <!-- <td></td>
+                <td></td> -->
+            </tr>
+            <tr>
+                <td>자기<br>소개</td>
+                <td colspan="3"></td>
+                <!-- <td></td>
+                <td></td> -->
+            </tr>
+        </table>
+    </body>
+</html>

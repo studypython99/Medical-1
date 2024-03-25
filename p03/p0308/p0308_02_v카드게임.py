@@ -22,7 +22,7 @@ for i in shape_list:    #   모양 4가지에
 
 random.shuffle(card_list)
 arr_num = 0
-while True:
+while True:#    샘플로 남은걸로 뽑고 남은걸로 뽑고 남은걸로 뽑고
     print("1. 카드 1장 뽑기")
     print("2. 카드 5장 뽑기")
     print("0. 종료")
