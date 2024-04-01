@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .main{
+            width: 900px; height: 800px; border: 3px solid black;
+            margin: 50px auto;
+            position: relative;} /*position이 잡혀서 c03의 부모가 됨*/
+        div{
+            width: 300px; height: 200px;}
+        .c01{background: green; 
+            position: relative; left: 150px;/*좌표를 현재위치 기준으로 왼쪽을 150px 만큼*/
+            position: relative; top: 100px;/*위쪽으로 150px 만큼*/
+            z-index: 1;}/*z축을 기준으로 1번 표시*/
+        .c02{background: blue;
+            position: relative; left: 375px;}
+        .c03{background: red; position: absolute; left: 0; top: 0;} 
+        /*부모의 기준. 바로 위에는 main이지만 포지션이 없다면 body까지 올라감*/
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="c01"></div>
+        <div class="c02"></div>
+        <div class="c03"></div>
+        <div class="c04"></div>
+        <div class="c05"></div>
+    </div>
+</body>
+</html>
