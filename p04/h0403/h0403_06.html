@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            animation-name: move;
+            animation-duration: 5s; 
+            animation-iteration-count: infinite;
+            /*횟수진행, infinite(무한)*/
+            animation-direction: normal;
+            /*normal(진행~초기화), alternate-역방향(진행~역진행)*/
+            animation-timing-function: ease-in;
+            /*진행속도*/
+            animation-fill-mode: backwards;
+            /*종료 후 스타일 지정, forward처음으로 갈지 or backwards끝에서 시작할지*/
+            animation-delay: 1s; /*딜레이 후 진행*/
+
+            /*animation:    name이름 duration시간 
+                            timing-function진행속도 delay지연시간 
+                            iteration-count반복 direction방향; <<순서대로 한줄로도 가능!*/ 
+        }
+
+        @keyframes move {
+            from {
+                background: red;
+                border: 1px solid pink;
+                transform: translate(0,0);
+            }
+
+            25% {
+                background: yellow;
+                border: 1px solid pink;
+                transform: translate(100px,0px);
+            }
+            50% {
+                background: blue;
+                border: 1px solid pink;
+                transform: translate(100px,100px);
+            }
+            75% {
+                background: violet;
+                border: 1px solid pink;
+                transform: translate(0px,100px);
+            }
+
+            to {
+                background: red;
+                border: 1px solid pink;
+                border-radius: 50%;
+                transform: translate(0px,0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

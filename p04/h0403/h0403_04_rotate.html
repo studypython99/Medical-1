@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{width: 200px; height: 200px; border: 1px solid black;}
+        .sub{width: 200px; height: 200px; background: red;
+        animation: rotate 0.5s infinite alternate;}
+
+
+        @keyframes rotate{
+            from{transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+            backface-visibility: visible;}
+            to{transform: perspective(400px) rotateX(0deg) rotateY(-180deg);
+            backface-visibility: visible;}
+        }
+        @keyframes back{
+            from{background: red;}
+            10%{background: green;}
+            to{background: blue;}
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sub">
+            <img src="imgs/wif.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

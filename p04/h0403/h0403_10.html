@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cs_content {
+            width: 1180px;
+            height: 1943px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+
+        .title {
+            padding-bottom: 36px;
+            border-bottom: 4px solid #202020;
+            color: #101010;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 56px;
+        }
+
+        .tab_wrap {
+            width: 100%;
+            height: 41px;
+            border: 1px solid blue;
+            margin-top: 40px;
+        }
+
+        .tabs {
+            font-size: 20px;
+            color: #606060;
+            line-height: 23px;
+            font-weight: 700;
+        }
+
+        .tabs li {
+            display: inline;
+            list-style-type: none;
+            margin-right: 10px;
+        }
+
+        .on {
+            color: black;
+            font-weight: 900;
+            border-bottom: 4px solid #202020;
+        }
+
+        .f_search {
+            margin-top: 56px;
+        }
+
+        .tit {
+            font-size: 22px;
+            line-height: 32px;
+            font-weight: 700;
+            color: #101010;
+        }
+
+        .box_search {
+            width: 100%;
+            height: 132px;
+            box-sizing: border-box;
+            margin-top: 16px;
+            padding: 32px;
+            background: #F7F7F7;
+        }
+
+        .sch_wrap {
+            height: 68px;
+        }
+
+        .input_wrap {
+            margin: 0 auto;
+            width: 655px;
+            height: 68px;
+        }
+
+        .sch_wrap input.txt {
+            width: 100%;
+            height: 68px;
+            border: 2px solid #202020;
+            color: #101010;
+            font-weight: 700;
+            font-size: 20px;
+            opacity: 1;
+        }
+
+        .f_type .cate_wrap {
+            border: 1px solid green;
+            width: 100%;
+            height: 120px;
+        }
+        /*간격 균일하게, 글씨크기 테이블 사용하기!*/
+        .cate_wrap tr{}
+        /*간격 균일하게, 글씨크기*/
+        .cate_wrap td{font-size: 20px;}
+
+    </style>
+</head>
+
+<body>
+    <div class="cs_content">
+        <h1 class="title">고객행복센터</h1>
+        <div class="tab_wrap">
+            <ul class="tabs">
+                <li class="on">FAQ</li>
+                <li>공지사항</li>
+                <li>지정일배송/이용안내</li>
+            </ul>
+        </div>
+        <div class="f_search">
+            <h2 class="tit">FAQ 검색</h2>
+        </div>
+        <div class="box_search">
+            <div class="sch_wrap">
+                <div class="input_wrap">
+                    <form action="" name="searchForm" method="post">
+                        <label for="fn_txt_srch" class="hide"></label>
+                        <input type="text" class="txt" id="fn_txt_srch" placeholder="    검색어를 입력해주세요" name="keyWord"
+                            required>
+                        <button type="button" class="btn btn_srch"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="f_type">
+            <h2 class="tit">문의유형</h2>
+            <div class="cate_wrap">
+                <div>
+                    <tr>
+                        <td>전체</td>
+                        <td>배송</td>
+                        <td>결제영수증</td>
+                        <td>주문</td>
+                        <td>취소/반품</td>
+                    </tr>
+                </div>
+                <div>
+                    <tr>
+                        <td>리뷰/포인트</td>
+                        <td>선물하기</td>
+                        <td>회원</td>
+                        <td>기타</td>
+                        <td></td>
+                    </tr>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
