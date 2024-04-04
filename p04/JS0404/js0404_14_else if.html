@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>else if</title>
+    <script>
+//1~100까지 숫자를 입력받아, 90이상 A, 80이상 B, 70이상 C, 60이상 D, 60이하 F
+// 93이하 A-, 94~97 A, 98~100 A+
+//  83이하 B-, 84~87 B, 88~90 B+
+        var num1 = Number(prompt("숫자를 입력하세요"));
+        if(num1>90){            
+            if(num1<93){document.write("A-");}
+            else if(num1<97){document.write("A");}
+            else{document.write("A+");}
+        }else if(num1>80){
+            if(num1<83){document.write("B-");}
+            else if(num1<87){document.write("B");}
+            else{document.write("B+");}
+        }else if(num1>70){
+            if(num1<73){document.write("C-");}
+            else if(num1<77){document.write("C");}
+            else{document.write("C+");}
+        }else if(num1>60){
+            if(num1<63){document.write("D-");}
+            else if(num1<67){document.write("D");}
+            else{document.write("D+");}
+        }else(num1<60)
+            document.write("F");
+        
+        
+
+        /*
+        //숫자를 입력받아서 양수,0,음수를 출력하시오
+        var num1 = Number(prompt("숫자를 입력하세요"));
+        if(num1>0){
+            document.write("양수");
+        }else if(num1<0){
+            document.write("음수");
+        }else{
+            document.write('0');
+        }*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
