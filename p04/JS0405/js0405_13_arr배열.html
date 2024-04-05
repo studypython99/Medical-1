@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <script> // 객체선언: 변수, 함수
+        //이름 불러오기
+        var arry_name = ["홍길동","유관순","강감찬","이순신"]
+        for(i in arry_name){
+            document.write(arry_name[i],"<br>")
+        }
+        document.write("-------------------------<br>");
+
+        var obj = new Object(); //객체사용이유?: 안전성, 보안, 재사용
+        //배열생성방법
+        var arr1 = new Array(); // 첫번째
+        arr1[0] = 10;
+        document.write(arr1[0],"<br>"); //두번째
+        document.write("-------------------------<br>");
+        var arr2 = new Array(1,2,3,4,5);
+        var arr3 = [1,2,3,4,5]; //세번째
+        document.write(arr3[2],"<br>"); //3 
+        document.write("-------------------------<br>");
+        for(var i=0; i<5; i++){
+            document.write(arr3[i],"<br>"); // 1,2,3,4,5 value을 읽어온다
+        }
+        document.write("-------------------------<br>");
+        for(a in arr3){
+            document.write(a,"<br>"); //0,1,2,3,4 key값을 읽어온다
+        }
+        document.write("-------------------------<br>");
+        for(a in arr3){
+            document.write(arr3[a],"<br>"); //1,2,3,4,5 value값을 읽어온다
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
