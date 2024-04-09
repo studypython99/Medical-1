@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수선언방법</title>
+    <script>
+        //var:변수, 중복으로 변수선언 가능
+        //let:변수, 중복선언 불가
+        //const:상수, 중복선언 불가
+        //let, const: 초기화를 꼭 해줘야 한다.
+        //let, const: 지역변수로 선언되면 전역에서 사용불가
+        
+        document.write("count: ",count,"<br>") //count: undefined
+        let  ; // 이 위치에서는 여러범위에서 사용 가능하다
+        document.write("b: ",b,"<br>") //?? 아무것도 안뜸; let보다 아래에 있다면;
+        var count ;
+
+        document.write(a,"<br>")
+        document.write(b,"<br>")
+        document.write(c,"<br>")
+        var a = "홍길동"; // 또 a 변수를 선언했다
+        document.write(a,"<br>")
+        {let b = 3 //지역변수
+            document.write(b,"<br>")
+        }
+
+        {let b = 5}
+        {let b = 7}
+        {let b = 6}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

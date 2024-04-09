@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    </script>
+    <style>
+        table{border-collapse: collapse; text-align: center;}
+        td{border:1px solid #DADCE0; height:40px; font-size: 25px; font-weight: 600; }
+        button{width:120px; height:35px; }
+        .td1{border-top:0px; border-bottom: 0px;}
+        .td2{height:25px; background: #F8F9FA; font-size:13px;}
+        .tr3{border:0px;}
+    </style>
+</head>
+<body>
+    <label>온도</label>
+    <table>
+        <colgroup>
+          <col width="150px">
+          <col width="50px">
+          <col width="150px">
+        </colgroup>
+        <tr>
+            <td>0</td>
+            <td rowspan="2" class="td1">=</td>
+            <td>0</td>
+        </tr>
+        <tr >
+            <td class="td2">섭씨</td>
+            <td class="td2">화씨</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="tr3">
+                <button onclick="mbtn()">확인</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

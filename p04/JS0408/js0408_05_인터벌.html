@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        div{width: 400px; height: 100px; margin: 50px auto;}
+        button{width: 150px; height: 40px; display: block; margin: 0 auto;}
+        h2{font-size: 40px; text-align: center; border: 3px solid black;}
+    </style>
+    <script>
+        var addNum = 0;
+
+        function auto_plus(){
+            auto1 = setInterval(add_num,1000);
+        }
+        add_num = function (){
+            //addNum++;
+            //시간으로 작성하기 위한
+            //객체선언 
+            document.querySelector(".title").innerText = addNum;
+        }
+    </script>
+</head>
+<body>
+    <h2 class="title">00:00:00</h2>
+    <br>
+    <button onclick="auto_plus()">시계START</button>
+    <button onclick="clearInterval(auto1)">시간멈춤STOP</button>
+    
+</body>
+</html>
