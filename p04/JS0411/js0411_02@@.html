@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            background: yellow;
+            font-size: 20px;
+            text-align: right;
+            overflow: auto; /**자동스크롤*/
+        }
+    </style>
+    <script>
+        /** 1. Jquery 구문*/
+        $(function(){
+
+        });//query 뭐가 뭔지 잘 모르니까 표시해주자
+        
+        
+        /** 2. js 구문*/
+        function dBtn(){
+                $("#main").append("몰루: "+$("#txt").val()+"<br>"); //입력하는 텍스트 누적
+                $("#txt").val(""); //input #txt의 내용을 ""빈공간 으로 만들어주세요
+
+        }
+        //자바스크립트 이벤트
+        document.querySelector("#dBtn").addEventListener("click",function(){
+            alert("test");
+        })
+        
+    </script>
+</head>
+
+<body>
+    <div id="main"></div>
+    <input type="text" name="txt" id="txt">
+    <button id="dBtn">확인</button>
+    <script>
+            //자바스크립트 이벤트 생성방법
+            //document.querySelector("#txt").addEventListener("keyup",function(){
+            //if(window.envnt.keyCode == 13){
+                   // $("#main").append("몰루: "+$("#txt").val()+"<br>"); //입력하는 텍스트 누적
+                    //$("#txt").val(""); //input #txt의 내용을 ""빈공간 으로 만들어주세요
+
+               // }
+
+                //});
+
+        //제이쿼리 선언
+        $(function(){
+            //제이쿼리 이벤트 생성
+            if(window.event.keyCode == 13){
+                console.log("enter키 누름");
+                $("#main").append("몰루: "+$("#txt").val()+"<br>"); //입력하는 텍스트 누적
+                $("#txt").val(""); //input #txt의 내용을 ""빈공간 으로 만들어주세요
+        }});
+
+        
+    </script>
+</body>
+
+</html>
