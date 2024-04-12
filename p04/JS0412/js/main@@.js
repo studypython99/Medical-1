@@ -105,7 +105,8 @@ $(function(){
             //모든 체크박스를 가져오기
             $(".stuChk").each(function(){
                 if($(this).is(":checked")==true){
-                    
+                    console.log("현재 선택된 .stuChk: "+$(this).val());
+                    console.log("현재 선택된 #id: "+$(this).parent().parent().attr("id"));
                 }
             })
         })
