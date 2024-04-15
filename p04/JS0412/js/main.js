@@ -154,7 +154,7 @@ $(function(){
         //모든 체크박스를 가져오기
         $(".stuChk").each(function(){
 
-            //??? 왜 콘솔이 안뜰까?
+            //??? 왜 콘솔이 안뜰까? , 삭제를 눌러야 뜸 ㅎㅎ
             if($(this).is(":checked") ==true){
                 console.log("현재 선택된class: "+$(this).val());
                 console.log("현재 선택된idd: "+$(this).parent().parent().attr("id"));

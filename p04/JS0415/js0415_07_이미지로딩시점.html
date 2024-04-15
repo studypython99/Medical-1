@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        //웹브라우저 화면이 나타나는 시점
+        $(function(){
+            var h2 = $(".img1").height();
+            console.log("ready: ",h2); //0
+        })
+        //html,css,image 모두 로딩된 후 실행
+        $(function(){
+            $(window).load(function(){
+                var h2=$(".img1").height();
+                console.log("load:",h2) //300
+            })
+        })
+    </script>
+    <style>
+ 
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+<p><img src="http://place-hold.it/300X300" class="img1" alt=""></p>
+</body>
+
+</html>
