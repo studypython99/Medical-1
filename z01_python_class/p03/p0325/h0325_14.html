@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <style>
+            table,th,td{border: 1px solid black;}
+            
+            thead{text-align: center;background-color: rgb(204, 190, 190);}
+            tbody{text-align: left;}
+            tfoot{text-align: center;background-color: rgb(204, 190, 190);font-weight: 700;}
+            #id{text-align: center; }
+        </style>
+    </head>
+    <body>
+        <table >
+            <caption>요안도라 객실</caption>
+            <colgroup>
+            <col width="120">
+            <col width="120">
+            <col width="120">
+            <col width="120">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>방 이름</th>
+                    <th>대상</th>
+                    <th>크기</th>
+                    <th>가격</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="id">유채방</td>
+                    <td>여성 드미토리</td>
+                    <td rowspan="3">4인실</td>
+                    <td rowspan="4">1인 20,000원</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" id="id">동백방</td>
+                <td>동성 드미토리</td>
+                <!-- <td>4인실</td> -->
+                <!-- <td>1인 20,000원</td> -->
+            </tr>
+            <tr>
+                <!-- <td>동백방</td> -->
+                <td>가족 1팀</td>
+                <!-- <td>4인실</td> -->
+                <!-- <td>1인 20,000원</td> -->
+            </tr>
+            <tr>
+                <td id="id">천혜향방</td>
+                <td>-</td>
+                <td>2인실</td>
+                <!-- <td>1인 20,000원</td> -->
+            </tr>
+            </tbody>
+            <tfoot>                
+                <tr>
+                    <td colspan="4">바깥채 전체를 렌트합니다</td>
+                    <!-- <td></td>
+                        <td></td>
+                        <td></td> -->
+                </tr>
+            </tfoot>
+                </table>
+        </body>
+        </html>

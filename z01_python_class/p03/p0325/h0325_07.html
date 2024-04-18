@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ul,ol태그</title>
+        <style>
+            /*ul{list-style: none;} 앞에 점(블릿)을 없애줌//disc:● square:■ circle:○*/ 
+            ul{list-style: circle;}
+            /*ul에 이미지를 부여한다.*/
+            #u1{list-style:url(b1.JPG)}
+            /*  lower-roman, upper-roman: 로마자
+                alpha: 영문자
+                decimal: 숫자
+                
+            */
+            #o1{list-style-type: upper-roman;}
+        </style>
+    </head>
+    <body>
+        <ol id="o1" type="1"><!--oder list 순서있는 리스트 type=1,a,A,-->
+            <li>네이버</li><!--순서있는 목록: 1234 표시-->
+            <li>다음</li>
+            <ol type="a" start="3">
+                <li>구글</li>
+                <li>쿠팡</li>
+                <li>지마켓</li>
+            </ol>
+        </ol>
+        
+        
+        
+        
+        <ul id="u1">
+            <li>네이버</li><!--순서없이 점으로 표시-->
+            <li>다음</li>
+            <li>구글</li>
+            <li>쿠팡</li>
+            <li>지마켓</li>
+        </ul>
+    </body>
+</html>

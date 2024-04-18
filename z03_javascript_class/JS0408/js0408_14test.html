@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin:0; padding:0;}
+        div{width:700px; height: 200px; margin:50px auto; }
+        button{width:150px; height:40px; display: block; margin:0 auto; }
+        h2{font-size:40px; text-align: center; border:3px solid black;}
+    </style>
+    <script>
+        function auto_plus(){
+            auto1 = setInterval(clock,1000);
+        }
+        function clock(){
+            var today = new Date(); //오늘날짜
+            var d_day = new Date(2024,3,10); //해당날짜
+
+            
+            var diffDate = d_day.getTime() - today.getTime();
+            //사이 기간을 모두 1/1000초로 받는다. 따라서 x1000
+            // 60*60*24 = 하루에 86400초
+            // diffDate / 1000x86400 = 몇일이 남았는지 계산 가능
+            // floor: 내림 / ceil: 올림 / round: 반올림
+
+
+            var date_result = Math.floor(diffDate/(1000*60*60*24));//몫
+            var remain_date = diffDate%(1000*60*60*24);//나머지
+
+            var hour_result = Math.floor(remain_date/(1000*60*60));
+            var remain_hour = remain_date%(1000*60*60);
+
+            var min_result = Math.floor(remain_hour/(1000*60));
+            var remain_min = remain_hour%(1000*60);
+
+            var sec_result = Math.floor(remain_min/1000);
+            // 00:00:00 으로 포맷을 맞춘다.
+            nowHour = String(hour_result).padStart(2,"0");
+            var nowMinute = today.getMinutes();
+
+            nowMin = String(min_result).padStart(2,"0");
+            var nowSecond = today.getSeconds();
+
+            nowSec = String(sec_result).padStart(2,"0");
+            var auto_time = nowHour+" : "+nowMin+" : "+nowSec
+            // title 1,2 위치에 일/ 시분초를 입력한다.
+            document.querySelector(".title1").innerText = date_result+"일";
+            document.querySelector(".title2").innerText = auto_time;
+
+    }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>[ 10월 31일까지 남은 일자 및 시간 ]</h2>
+        <h2 class="title1">0일</h2>
+        <h2 class="title2">00:00:00</h2>
+        <br>
+        <button onclick="auto_plus()">시계START</button>
+        <button onclick="clearInterval(auto1)">시간멈춤</button>
+    </div>
+    
+</body>
+</html>

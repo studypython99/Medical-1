@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+
+        .div1{
+            width: 100%;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        .div2{
+            width: 300px;
+            margin: 0 auto;}
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+
+        td {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+    <script>
+        /*
+        hdata += "<h1>[학생성적프로그램]</h1>"
+        hdata += "<table>"
+        hdata += "<tr><th>번호</th><th>이름</th><th>합계</th>"
+        hdata += "<table>"
+        hdata += "<tr><td>1</td><td>홍길동</td><td>100</td>"
+        document.write(hdata); */
+        // 표 2행 3열
+        //  번호    이름    합계
+        //  1       홍길동  100
+        
+        document.write("<div class=div1>")
+            document.write("<div class=div2>")
+                document.write("<h1>[학생성적프로그램]</h1>");
+                document.write("<table>");
+                document.write("<tr><th>번호</th><th>이름</th><th>합계</th></tr>");
+                for(i=0; i <101; i++) //i는 0부터 100까지 1씩 증가시킨다
+                    document.write("<tr><td>" + (i+1) + "</td><td>홍길동</td><td>100</td></tr>");
+                document.write("</table>");
+            document.write("</div>")
+        document.write("</div>")                  
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

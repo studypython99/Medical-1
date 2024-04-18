@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue</title>
+    <script>
+        //구구단, 3의 배수와 5의 배수를 제외하고 출력
+        // 3,5의 배수 구구단만 출력;;
+        for(var i=2; i<10; i++){
+            document.write(`${i}단<br>`);
+            if(i%3==0 || i%5==0)
+            for(var j=1; j<10; j++){
+                document.write(`${i}x${j}=${i*j}`);
+            }
+            document.write(`<br>`)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

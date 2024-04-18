@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .total{width: 100%; height: 1100px;}
+        .top{width: 100%; height: 200px; background: steelblue;}
+        .mid{width: 100%; height: 600px; 
+        display: flex; margin: 0 auto;}
+        .mid_L{width: 60%; height: 600px; 
+        display: flex;}
+        .mid_L_L{width: 34%; height: 600px; background: tan;}
+        .mid_L_M{width: 33%; height: 600px; background: yellow;}
+        .mid_L_R{width: 33%; height: 600px; background-color: rgb(255, 255, 255);}
+
+        .mid_R{width: 40%; height: 600px; background: khaki;}
+        .bot{width: 100%; height: 300px; background: lavender;}
+        @media screen and (max-width:1600px){
+            .mid_L_L{background: blue;}
+            }
+        @media screen and (max-width:1200px){
+            .mid_L_L{background: green;}
+            }
+        @media screen and (max-width:1000px){
+            .mid_L_L{background: pink;}
+            .mid_R{display: none;}
+            .mid_L{width: 100%; height: 600px;}/*오른쪽이 사라지고나서 미드의 크기 조정*/
+            .mid_L_L{width: 34%; height: 600px; background: tan;}
+            .mid_L_M{width: 33%; height: 600px; background: yellow;}
+            .mid_L_R{width: 33%; height: 600px; background-color: #fff;}
+            }
+        @media screen and (max-width:800px){
+            .mid_L_L{background: yellow;}
+            .mid_L_R{display: none;}
+            .mid_L_M{width: 50%; height: 600px; background: red;
+                border: 1px solid black;}
+            .mid_L_L{width: 50%; height: 600px; } 
+            }
+        @media screen and (max-width:600px){
+            .mid_L{display: block;}
+            .mid_L_L{background: yellow;}
+            .mid_L_L{width: 100%; height: 200px; background: tan;}
+            .mid_L_M{width: 100%; height: 200px; background: yellow;}
+            .mid_L_R{width: 100%; height: 200px; background-color: #fff;}
+            }
+    </style>
+</head>
+<body>
+    <div class="total">
+        <div class="top">top</div>
+        <div class="mid">            
+            <div class="mid_L">
+                <div class="mid_L_L">mid_L_L</div>
+                <div class="mid_L_M">mid_L_M</div>
+                <div class="mid_L_R">mid_L_R</div>
+            </div>
+            <div class="mid_R">mid_R</div>            
+        </div>
+        <div class="bot">bot</div>
+    </div>
+</body>
+</html>

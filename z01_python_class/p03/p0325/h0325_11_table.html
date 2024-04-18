@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>표만들기</title>
+        <style>
+            /*collapse: border선을 합치다.*/
+            table{border-collapse: collapse;
+            /*text-align: center 글씨 중앙배치*/
+            text-align: center;}
+            table,th,td{border: 1px solid black;}
+        </style>
+    </head>
+    <body>
+        <hr>
+        <!--3행4열-->
+        <table>
+            <colgroup>
+            <col style="width:100px">
+            </colgroup>
+            <colgroup>
+            <col style="width:100px">
+            </colgroup>
+            <colgroup>
+            <col style="width:100px">
+            </colgroup>
+            <colgroup>
+            <col style="width:100px">
+            </colgroup>
+            <tr>
+                <td>1행1열</td>
+                <td colspan="3">1행2열</td>
+
+            </tr>
+            <tr>
+                <td colspan="2">2행1열</td>
+                
+                <td>2행3열</td>
+                <td>2행4열</td>
+            </tr>
+            <tr>
+                <td>3행1열</td>
+                <td>3행2열</td>
+                <td colspan="2">3행3열</td>
+                
+            </tr>
+        </table>
+        <hr>
+        <!--4행 9열-->
+        <table>
+            <tr>
+                <td>1행1열</td>
+                <td>1행2열</td>
+                <td>1행3열</td>
+                <td>1행4열</td>
+                <td colspan="5">1행5열</td>
+                <!-- <td>1행6열</td>
+                <td>1행7열</td>
+                <td>1행8열</td>
+                <td>1행9열</td> -->
+            </tr>
+            <tr>
+                <td>2행1열</td>
+                <td>2행2열</td>
+                <td colspan="5">2행3열</td>
+                <!-- <td>2행4열</td>
+                <td>2행5열</td>
+                <td>2행6열</td>
+                <td>2행7열</td> -->
+                <td>2행8열</td>
+                <td>2행9열</td>
+            </tr>
+            <tr>
+                <td>3행1열</td>
+                <td colspan="3">3행2열</td>
+                <!-- <td>3행3열</td>
+                <td>3행4열</td> -->
+                <td>3행5열</td>
+                <td>3행6열</td>
+                <td>3행7열</td>
+                <td>3행8열</td>
+                <td>3행9열</td>
+            </tr>
+            <tr>
+                <td>4행1열</td>
+                <td>4행2열</td>
+                <td>4행3열</td>
+                <td>4행4열</td>
+                <td>4행5열</td>
+                <td>4행6열</td>
+                <td colspan="3">4행7열</td>
+                <!-- <td>4행8열</td>
+                <td>4행9열</td> -->
+            </tr>
+        </table>
+        <hr>
+<!--5행 3열-->
+        <table>
+            <tr>
+                <td rowspan="3">1행1열</td>
+                <td>1행2열</td>
+                <td rowspan="4">1행3열</td>
+            </tr>
+            <tr>
+                <!-- <td>2행1열</td> -->
+                <td rowspan="4">2행2열</td>
+                <!-- <td>2행3열</td> -->
+            </tr>
+            <tr>
+                <!-- <td>3행1열</td> 다 지워서 아예 없어져버림..;;-->
+                <!-- <td>3행2열</td> -->
+                <!-- <td>3행3열</td> -->
+            </tr>
+            <tr>
+                <td>4행1열</td>
+                <!-- <td>4행2열</td> -->
+                <!-- <td>4행3열</td> -->
+            </tr>
+            <tr>
+                <td>5행1열</td>
+                <!-- <td>5행2열</td> -->
+                <td>5행3열</td>
+            </tr>
+        </table>
+        <hr>
+        <table>
+            <tr>
+                <td>1행1열</td>
+                <td>1행2열</td>
+                <td>1행3열</td>            
+            </tr>
+            <tr>
+                <td>2행1열</td>
+                <td>2행2열</td>
+                <td>2행3열</td>            
+            </tr>
+        </table>
+    </body>
+</html>

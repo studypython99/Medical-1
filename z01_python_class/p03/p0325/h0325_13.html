@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>table,th,td</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+            *{margin: 0; padding: 0;
+                font-family: "Noto Sans KR", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;}
+            #t1{border-top: 2px solid #8a8d8f;
+                border-bottom: 2px solid #8a8d8f;}
+            table{border-collapse: collapse;
+            text-align: center; margin: 50px auto; }
+            th,tr,td{border-bottom: 1px solid #e3e3e3;
+                    color: #333; font-size: 13px;}
+            th{height: 52px; font-weight: 700;}
+            td{height: 50px;}
+        </style>
+    </head>
+    <body>
+        <table id="t1">
+            <colgroup>
+                <col width="100">
+                <col width="600">
+                <col width="200">
+                <col width="200">
+            </colgroup>
+            <thead>
+                <tr><!--가운데정렬, 볼드체가 기본값으로 적용됨-->
+                    <th>번호</td>
+                    <th>제목</td>
+                    <th>리조트</td>
+                    <th>등록일자</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >29</td>
+                    <td>호반 레저 사진 공모전 수상작 발표</td>
+                    <td>리솜리조트</td>
+                    <td>2023-11-24</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>[ESC국제인증] 안심여행을 위한 방역시스템 강화</td>
+                    <td>리솜리조트</td>
+                <td>2023-11-24</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>제천 주요 여행지 제휴혜택 안내</td>
+                    <td>포레스트</td>
+                    <td>2023-11-16</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>리오(RE:O) 론칭 기념 이벤트 당첨자 발표</td>
+                    <td>포레스트</td>
+                    <td>2023-08-24</td>
+                </tr>
+            </tbody>
+        </table>        
+    </body>
+    </html>

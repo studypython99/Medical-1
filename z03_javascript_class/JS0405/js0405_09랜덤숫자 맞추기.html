@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1~100
+        var random_no = Math.floor(Math.random()*100)+1;
+        var in_no;
+        var temp = 0;
+        //랜덤숫자 맞추기
+        // 5번까지 도전, 이후 랜덤숫자(정답) 출력
+        for(var i=1; i<6; i++){
+            in_no = Number(prompt("숫자를 입력하세요",random_no));
+            if(in_no == random_no){
+                temp = 1;
+                break;
+            }
+        }
+        if(temp==0){
+            document.write("실패");
+        }else{
+            document.write("정답");
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

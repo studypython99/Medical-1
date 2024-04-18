@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .main, .main2, .main3, .main4, .main5{width: 1000px; height: 500px; margin: 0 auto; border: 1px solid black;
+            display: flex; justify-content: space-around; align-items: center;}
+        /*skew 왜곡*/
+        .main5 .c{width: 200px; height: 200px; border: 1px solid black;}
+        .main5{perspective: 100px;}
+        .main5 .c1:hover{transform: skewX(-30deg);/*X축으로 -30도*/
+        transform-origin: left top;/*기준점 변경*/}
+
+        .main5 .c2:hover{transform: skewY(30deg);}/*Y축으로 30도*/
+        .main5 .c3:hover{transform: skewZ(30deg);}/*Z축으로 30도*/
+
+        /*rotate: 회전 xyz*/
+        .main4 .c{width: 200px; height: 200px; border: 1px solid black;}
+        .main4{perspective: 100px;}
+        .main4 .c1:hover{transform: rotateX(40deg);}/*X축으로 40도*/
+        .main4 .c2:hover{transform: rotateY(40deg);}/*Y축으로 40도*/
+        .main4 .c3:hover{transform: rotateZ(40deg);}/*Z축으로 40도*/
+        
+        /*rotate: 회전*/
+        .main3 .c{width: 200px; height: 200px; border: 1px solid black;}
+        .main3 .c1:hover{transform: rotate(20deg);}/*20도 시계방향*/
+        .main3 .c2:hover{transform: rotate(-40deg);}/*-40도 반시계방향*/
+        .main3 .c3:hover{transform: rotate3d(2.5, 1.2, 1.0, 40deg);}/*xyz 40도*/
+
+        /*scale: 확대*/
+        .main2 .c{width: 200px; height: 200px; border: 1px solid black;}
+        .main2 .c1:hover{transform: scale(1.5);}
+        .main2 .c2:hover{transform: scaleX(2);}
+        
+        /*translate: 이동
+        .c1:hover{transform: translate(30px,40px);}*/
+        .c1:hover{transform: translate(30px,30px);}
+        .c2:hover{transform: translateX(30px);}
+        .c3:hover{transform: translateY(30px);}
+        img{width: 200px;}
+    </style>
+</head>
+<body>
+    <div class="main5">skew 비틀어 왜곡
+        <div class="c c1">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c2">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c3">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+    </div>
+    <div class="main4">xyz회전
+        <div class="c c1">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c2">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c3">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+    </div>
+    <div class="main3">회전
+        <div class="c c1">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c2">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c3">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+    </div>
+    <div class="main2">확대
+        <div class="c c1">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c2">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c3">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+    </div>
+    <div class="main">이동
+        <div class="c c1">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c2">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+        <div class="c c3">
+            <img src="imgs/car02.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

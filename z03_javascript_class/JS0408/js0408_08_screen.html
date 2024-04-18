@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen</title>
+    <script>
+        var width1 = screen.width/2-201; //절반크기
+        var height1 = screen.height/2-151;
+        //document.write("모니터 가로 크기: ",width1);
+        //document.write("모니터 세로 크기: ",height1);
+        function popupBtn(){
+            window.open('popup.html','pop','width=302px, height=402px, left='+width1+'px, top='+height1+'px');
+        }
+    </script>
+</head>
+<body>
+    <button onclick="popupBtn()">팝업창 오픈</button>
+</body>
+</html>

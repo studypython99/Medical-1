@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if</title>
+    <script>
+        //alert, comsole, document, prompt, confirm
+        //var result = confirm("글쓰기를 취소하시겠습니까?"); //확인:true or 취소:flase
+        //document.write(result);
+        function writeBtn(){
+            if(confirm("글쓰기를 취소하시겠습니까?")){
+                document.write("글쓰기를 삭제합니다.");
+            }else{document.write("글쓰기를 시작합니다.");}
+        }
+        /*
+        //숫자를 입력받아 홀수, 짝수 출력
+        var input1 = Number(prompt("숫자를 입력하세요."));
+        //var result = input1 % 2 == 0? "짝수입니다.": "홀수입니다.";
+        document.write(input1 % 2 == 0? "짝수입니다.": "홀수입니다."); */
+    </script>
+</head>
+<body>
+    <h2>글쓰기</h2>
+    <input type="text">
+    <br>
+    <button onclick="writeBtn"></button>
+</body>
+</html>
