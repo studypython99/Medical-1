@@ -1,4 +1,4 @@
-# https://jumin.mois.go.kr/ageStatMonth.do
+# https://map.naver.com/p/entry/place/1505624624?c=15.00,0,0,0,dh&placePath=/review
 
 
 import time
@@ -9,25 +9,17 @@ import requests
 from bs4 import BeautifulSoup
 
 browser = webdriver.Chrome()
-url = "https://jumin.mois.go.kr/ageStatMonth.do"
+url = "https://map.naver.com/p/entry/place/1505624624?c=15.00,0,0,0,dh&placePath=/review"
 browser.get(url)
-time.sleep(3)
+time.sleep(5)
 soup = BeautifulSoup(browser.page_source,"lxml")
 # with open('junim.html','w',encoding='utf8') as f:
 #     f.write(soup.prettify())
 #테이블 검색
-tb = soup.find("table",{"id":"contextTable"})
-tbody = tb.find()############채워넣기
-trs = tbody.find_all("tr")  
-tds = trs[1].find_all("td")
-seoul = tds[2].text
-print("서울 인구수: ",seoul)
-tds = trs[4].find_all("td")
-incheon = tds[2].text
-print("인천 인구수: ",incheon)
-tds = trs[9].find_all("td")
-kkd = tds[2].text
-print("경기도 인구수: ",kkd)
+lis = soup.find("div","vg7Fp")
+print(lis)
+
+
 
 
     

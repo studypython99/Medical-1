@@ -47,3 +47,4 @@ for idx, li in enumerate(nb_ul[:20]):
         continue
     print("평점인원 : ",li.find("span","rating-total-count").text.replace('(', '').replace(')', '')+'명')
     print('-'*50)
+    
