@@ -31,5 +31,6 @@ while True:
 #데이터 찾기    
 soup = BeautifulSoup(browser.page_source,"lxml")
 sections = soup.find_all("section","custom-11ytuur e1134x5i3")
+print("갯수: ",len(sections))
 
 time.sleep(100)

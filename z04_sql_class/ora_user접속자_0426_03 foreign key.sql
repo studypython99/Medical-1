@@ -241,3 +241,4 @@ insert into emp(empno,ename,sal,gender) values(--job제거
 6,'김유신',3000,'남자' -- job 0001 디폴트 설정
 );
 select*from emp;
+

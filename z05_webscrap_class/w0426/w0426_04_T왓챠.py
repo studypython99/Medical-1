@@ -30,10 +30,10 @@ while True:
 # 데이터 찾기
 soup = BeautifulSoup(browser.page_source,"lxml")
 sections = soup.find_all("section",{"class":"custom-11ytuur e1134x5i3"})
-print("개수 : ",len(sections))
+print("개수1 : ",len(sections))
 uls = sections[14].find("ul",{"class":"evjjsye0 custom-plh92q-Row e8ldpmn0"})
 lis = uls.find_all("li",{"class":"w_exposed_cell e1bnpttb3 custom-vnoe9g-RowItem etpnybg1"})
-print("개수 : ",len(lis))
+print("개수2 : ",len(lis))
 alts = lis[0].find("img")
 print(lis[0].find("img"))
 print("제목 : ",alts["alt"])
