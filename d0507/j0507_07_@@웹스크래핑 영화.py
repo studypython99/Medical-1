@@ -1,61 +1,570 @@
-'''
-역대 관객순
-year    title   num     평점
-2019 극한직업   1626    3.6
-2020    남산의 부장들   475     3.5
-2021    모가디슈    361     3.6
-2022    범죄도시2   1269    3.5
-2023    서울의 봄   1312    4.1
-'''
-data = {
-    'year':[]
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data = {\n",
+    "    '이름': ['강나래','강태원','강호림','김수찬','김재욱','박동현','박혜정','송근열'],\n",
+    "    '학교': ['구로고','구로고','구로고','구로고','구로고','단지고','단지고','단지고'],\n",
+    "    '키': [197,184,168,187,188,202,188,190],\n",
+    "    '국어': [90,40,80,40,15,80,55,100],\n",
+    "    '영어': [85,35,75,60,20,100,65,85],\n",
+    "    '수학': [100,50,70,70,10,95,45,90],\n",
+    "    '과학': [95,55,80,75,35,85,40,94],\n",
+    "    '사회': [85,25,75,80,10,85,35,95],\n",
+    "    'sw특기': ['Python','Java','Javascript','','','C+','PYTHON','c#']\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>이름</th>\n",
+       "      <th>학교</th>\n",
+       "      <th>키</th>\n",
+       "      <th>국어</th>\n",
+       "      <th>영어</th>\n",
+       "      <th>수학</th>\n",
+       "      <th>과학</th>\n",
+       "      <th>사회</th>\n",
+       "      <th>sw특기</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>강나래</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>197</td>\n",
+       "      <td>90</td>\n",
+       "      <td>85</td>\n",
+       "      <td>100</td>\n",
+       "      <td>95</td>\n",
+       "      <td>85</td>\n",
+       "      <td>Python</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>강태원</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>184</td>\n",
+       "      <td>40</td>\n",
+       "      <td>35</td>\n",
+       "      <td>50</td>\n",
+       "      <td>55</td>\n",
+       "      <td>25</td>\n",
+       "      <td>Java</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>강호림</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>168</td>\n",
+       "      <td>80</td>\n",
+       "      <td>75</td>\n",
+       "      <td>70</td>\n",
+       "      <td>80</td>\n",
+       "      <td>75</td>\n",
+       "      <td>Javascript</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>김수찬</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>187</td>\n",
+       "      <td>40</td>\n",
+       "      <td>60</td>\n",
+       "      <td>70</td>\n",
+       "      <td>75</td>\n",
+       "      <td>80</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>김재욱</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>188</td>\n",
+       "      <td>15</td>\n",
+       "      <td>20</td>\n",
+       "      <td>10</td>\n",
+       "      <td>35</td>\n",
+       "      <td>10</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>박동현</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>202</td>\n",
+       "      <td>80</td>\n",
+       "      <td>100</td>\n",
+       "      <td>95</td>\n",
+       "      <td>85</td>\n",
+       "      <td>85</td>\n",
+       "      <td>C+</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6</th>\n",
+       "      <td>박혜정</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>188</td>\n",
+       "      <td>55</td>\n",
+       "      <td>65</td>\n",
+       "      <td>45</td>\n",
+       "      <td>40</td>\n",
+       "      <td>35</td>\n",
+       "      <td>PYTHON</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7</th>\n",
+       "      <td>송근열</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>190</td>\n",
+       "      <td>100</td>\n",
+       "      <td>85</td>\n",
+       "      <td>90</td>\n",
+       "      <td>94</td>\n",
+       "      <td>95</td>\n",
+       "      <td>c#</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "    이름   학교    키   국어   영어   수학  과학  사회        sw특기\n",
+       "0  강나래  구로고  197   90   85  100  95  85      Python\n",
+       "1  강태원  구로고  184   40   35   50  55  25        Java\n",
+       "2  강호림  구로고  168   80   75   70  80  75  Javascript\n",
+       "3  김수찬  구로고  187   40   60   70  75  80            \n",
+       "4  김재욱  구로고  188   15   20   10  35  10            \n",
+       "5  박동현  단지고  202   80  100   95  85  85          C+\n",
+       "6  박혜정  단지고  188   55   65   45  40  35      PYTHON\n",
+       "7  송근열  단지고  190  100   85   90  94  95          c#"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df = pd.DataFrame(data)\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>이름</th>\n",
+       "      <th>학교</th>\n",
+       "      <th>키</th>\n",
+       "      <th>국어</th>\n",
+       "      <th>영어</th>\n",
+       "      <th>수학</th>\n",
+       "      <th>과학</th>\n",
+       "      <th>사회</th>\n",
+       "      <th>sw특기</th>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>지원번호</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>1번</th>\n",
+       "      <td>강나래</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>197</td>\n",
+       "      <td>90</td>\n",
+       "      <td>85</td>\n",
+       "      <td>100</td>\n",
+       "      <td>95</td>\n",
+       "      <td>85</td>\n",
+       "      <td>Python</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2번</th>\n",
+       "      <td>강태원</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>184</td>\n",
+       "      <td>40</td>\n",
+       "      <td>35</td>\n",
+       "      <td>50</td>\n",
+       "      <td>55</td>\n",
+       "      <td>25</td>\n",
+       "      <td>Java</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3번</th>\n",
+       "      <td>강호림</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>168</td>\n",
+       "      <td>80</td>\n",
+       "      <td>75</td>\n",
+       "      <td>70</td>\n",
+       "      <td>80</td>\n",
+       "      <td>75</td>\n",
+       "      <td>Javascript</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4번</th>\n",
+       "      <td>김수찬</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>187</td>\n",
+       "      <td>40</td>\n",
+       "      <td>60</td>\n",
+       "      <td>70</td>\n",
+       "      <td>75</td>\n",
+       "      <td>80</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5번</th>\n",
+       "      <td>김재욱</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>188</td>\n",
+       "      <td>15</td>\n",
+       "      <td>20</td>\n",
+       "      <td>10</td>\n",
+       "      <td>35</td>\n",
+       "      <td>10</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6번</th>\n",
+       "      <td>박동현</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>202</td>\n",
+       "      <td>80</td>\n",
+       "      <td>100</td>\n",
+       "      <td>95</td>\n",
+       "      <td>85</td>\n",
+       "      <td>85</td>\n",
+       "      <td>C+</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7번</th>\n",
+       "      <td>박혜정</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>188</td>\n",
+       "      <td>55</td>\n",
+       "      <td>65</td>\n",
+       "      <td>45</td>\n",
+       "      <td>40</td>\n",
+       "      <td>35</td>\n",
+       "      <td>PYTHON</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>8번</th>\n",
+       "      <td>송근열</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>190</td>\n",
+       "      <td>100</td>\n",
+       "      <td>85</td>\n",
+       "      <td>90</td>\n",
+       "      <td>94</td>\n",
+       "      <td>95</td>\n",
+       "      <td>c#</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "       이름   학교    키   국어   영어   수학  과학  사회        sw특기\n",
+       "지원번호                                                  \n",
+       "1번    강나래  구로고  197   90   85  100  95  85      Python\n",
+       "2번    강태원  구로고  184   40   35   50  55  25        Java\n",
+       "3번    강호림  구로고  168   80   75   70  80  75  Javascript\n",
+       "4번    김수찬  구로고  187   40   60   70  75  80            \n",
+       "5번    김재욱  구로고  188   15   20   10  35  10            \n",
+       "6번    박동현  단지고  202   80  100   95  85  85          C+\n",
+       "7번    박혜정  단지고  188   55   65   45  40  35      PYTHON\n",
+       "8번    송근열  단지고  190  100   85   90  94  95          c#"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# index 지정해서 DateFrame 생성\n",
+    "df = pd.DataFrame(data,index=['1번','2번','3번','4번','5번','6번','7번','8번'])\n",
+    "df.index.name = '지원번호'\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 컬럼별 정렬"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>이름</th>\n",
+       "      <th>학교</th>\n",
+       "      <th>키</th>\n",
+       "      <th>국어</th>\n",
+       "      <th>영어</th>\n",
+       "      <th>수학</th>\n",
+       "      <th>과학</th>\n",
+       "      <th>사회</th>\n",
+       "      <th>sw특기</th>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>지원번호</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>8번</th>\n",
+       "      <td>송근열</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>190</td>\n",
+       "      <td>100</td>\n",
+       "      <td>85</td>\n",
+       "      <td>90</td>\n",
+       "      <td>94</td>\n",
+       "      <td>95</td>\n",
+       "      <td>c#</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7번</th>\n",
+       "      <td>박혜정</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>188</td>\n",
+       "      <td>55</td>\n",
+       "      <td>65</td>\n",
+       "      <td>45</td>\n",
+       "      <td>40</td>\n",
+       "      <td>35</td>\n",
+       "      <td>PYTHON</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6번</th>\n",
+       "      <td>박동현</td>\n",
+       "      <td>단지고</td>\n",
+       "      <td>202</td>\n",
+       "      <td>80</td>\n",
+       "      <td>100</td>\n",
+       "      <td>95</td>\n",
+       "      <td>85</td>\n",
+       "      <td>85</td>\n",
+       "      <td>C+</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5번</th>\n",
+       "      <td>김재욱</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>188</td>\n",
+       "      <td>15</td>\n",
+       "      <td>20</td>\n",
+       "      <td>10</td>\n",
+       "      <td>35</td>\n",
+       "      <td>10</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4번</th>\n",
+       "      <td>김수찬</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>187</td>\n",
+       "      <td>40</td>\n",
+       "      <td>60</td>\n",
+       "      <td>70</td>\n",
+       "      <td>75</td>\n",
+       "      <td>80</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3번</th>\n",
+       "      <td>강호림</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>168</td>\n",
+       "      <td>80</td>\n",
+       "      <td>75</td>\n",
+       "      <td>70</td>\n",
+       "      <td>80</td>\n",
+       "      <td>75</td>\n",
+       "      <td>Javascript</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2번</th>\n",
+       "      <td>강태원</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>184</td>\n",
+       "      <td>40</td>\n",
+       "      <td>35</td>\n",
+       "      <td>50</td>\n",
+       "      <td>55</td>\n",
+       "      <td>25</td>\n",
+       "      <td>Java</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1번</th>\n",
+       "      <td>강나래</td>\n",
+       "      <td>구로고</td>\n",
+       "      <td>197</td>\n",
+       "      <td>90</td>\n",
+       "      <td>85</td>\n",
+       "      <td>100</td>\n",
+       "      <td>95</td>\n",
+       "      <td>85</td>\n",
+       "      <td>Python</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "       이름   학교    키   국어   영어   수학  과학  사회        sw특기\n",
+       "지원번호                                                  \n",
+       "8번    송근열  단지고  190  100   85   90  94  95          c#\n",
+       "7번    박혜정  단지고  188   55   65   45  40  35      PYTHON\n",
+       "6번    박동현  단지고  202   80  100   95  85  85          C+\n",
+       "5번    김재욱  구로고  188   15   20   10  35  10            \n",
+       "4번    김수찬  구로고  187   40   60   70  75  80            \n",
+       "3번    강호림  구로고  168   80   75   70  80  75  Javascript\n",
+       "2번    강태원  구로고  184   40   35   50  55  25        Java\n",
+       "1번    강나래  구로고  197   90   85  100  95  85      Python"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# 이름으로 정렬, 순차정렬: default / ascending = Treu,\n",
+    "#               역순정렬: ascending = False\n",
+    "df. sort_index(ascending=False,inplace=True) # 역순정렬\n",
+    "df"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
 }
-import pandas as pd
-import requests
-import time
-import random
-from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-list1 = []
-headers = {"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36","Accep-Language":"ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7"}
-browser = webdriver.Chrome()
-browser.maximize_window()
-for i in range(5):
-    url = f"https://search.daum.net/search?w=tot&q={2023-i}%EB%85%84%EC%98%81%ED%99%94%EC%88%9C%EC%9C%84&DA=MOR&rtmaxcoll=MOR"
-    browser.get(url)
-    time.sleep(1)
-
-    soup = BeautifulSoup(browser.page_source,'lxml')
-    title = soup.find("strong","tit-g clamp-g").text.replace(" ","")
-    print(title)
-    # list1.append(title)
-    count = soup.find("p","conts-desc clamp-g").text.replace(",","")[3:-3]
-    print(count)
-    # list1.append(count)
-    browser.find_element(By.XPATH,'//*[@id="mor_history_id_0"]/div/div[1]/div/div[1]/c-flicking-item/c-layout/div/c-list-doc/ul/li[1]/c-doc/div/div[1]/c-thumb/div/a').click()
-    time.sleep(1)
-    #원본창[0], 새창[1], 그다음 새창[2]
-    browser.switch_to.window(browser.window_handles[-1])
-    
-    #평점 가져오기
-    soup = BeautifulSoup(browser.page_source,'lxml')
-    point = soup.find("span","gem-star-point").text[2:5]
-    print(point)
-    list1.append([2023-i,title,count,point])
-    time.sleep(1)
-    browser.back()
-    time.sleep(1)
-print(list1)
-
-# selenium
-# elem = browser.find_element(By.XPATH,'//span[text()=""]')
-# browser.find_elements(By.XPATH,'//button[@class=""]')
-# elem.click(), 
-# elem.send_keys('시가총액')
-# elem.send_keys(Keys.ENTER) 
-
-#list 타입 저장
