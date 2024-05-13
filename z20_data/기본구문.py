@@ -18,6 +18,18 @@ df
 # s_data = df_str['d_split'].str.split(',') #배열로 분리되어 리턴
 # s_data
 
+### 오라클 연결, 데이터를 pandas변환
+import oracledb
+import pandas as pd
+conn = oracledb.connect(user='ora_user2',password='1111',dsn='localhost:1521/xe')
+print(conn.version)
+query = 'select*from board'
+# select 데이터가 df타입으로 변경되어 갖고온다
+df = pd.read_sql_query(query,conn)
+df
+# 닫기
+conn.close()
+
 # Chicken Bowl 2개 이상 주문한 주문 횟수 출력
 filt = (df['item_name'] =='Chicken Bowl') & (df['quantity'] >= 2)
 len(df[filt]) # 33
