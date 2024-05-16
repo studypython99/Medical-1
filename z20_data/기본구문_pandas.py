@@ -18,6 +18,12 @@ df
 # s_data = df_str['d_split'].str.split(',') #배열로 분리되어 리턴
 # s_data
 
+# json데이터 변경
+json_data = res.json()
+json_data
+df = pd.DataFrame(json_data['data'])
+df
+
 ### 오라클 연결, 데이터를 pandas변환
 import oracledb
 import pandas as pd
