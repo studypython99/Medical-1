@@ -1,0 +1,20 @@
+# by 창민
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+with open('C:/Workspace/machine_learning_study/assets/dataset/mnist/t10k.csv', 'r') as file:
+    datas = file.readlines()[::2][0] # 첫번째꺼만
+    for str in datas:
+        data = str.strip().split(',')
+        number = data[0]
+        number_pix = np.array(data[1:]).reshape(28, 28)
+        # print(number, number_pix)
+        df = pd.DataFrame(number_pix)
+        print('number :', number)
+        for y in df.index:
+            for x in df.index:
+                if df[x][y] != '0':
+                    print('#', end='')
+                else:
+                    print(' ', end='')
+            print('')
